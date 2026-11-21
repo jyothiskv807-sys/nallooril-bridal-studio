@@ -89,20 +89,6 @@ svg {
   flex-shrink: 0;
 }
 
-/* Global SVG Icon Reset for Perfect Flex Centering */
-.btn-primary svg,
-.btn-secondary svg,
-.btn-nav-whatsapp svg,
-.btn-header-wa-mobile svg,
-.action-icon-circle svg,
-.footer-contact-item svg,
-.info-item svg,
-.action-card-arrow svg,
-.accordion-toggle-icon svg {
-  display: block;
-  flex-shrink: 0;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -273,14 +259,14 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 9px;
   line-height: 1;
+  padding: 12px 20px;
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-crisp-white);
-  padding: 0.625rem 1.25rem;
   min-height: 48px;
   border: 1px solid var(--color-champagne);
   border-radius: 2px;
@@ -289,11 +275,12 @@ button {
 }
 
 .btn-nav-whatsapp svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   fill: currentColor;
   display: block;
   flex-shrink: 0;
+  transform: translateY(0.5px);
 }
 
 /* Mobile Menu Toggle Button (44px x 44px Tap Target) */
@@ -388,16 +375,18 @@ button {
    ========================================================================== */
 .hero-section {
   background-color: var(--color-crisp-white);
-  padding-top: clamp(3rem, 6vw, 5.5rem);
-  padding-bottom: clamp(3.5rem, 7vw, 6.5rem);
+  padding-top: 36px;
+  padding-bottom: 44px;
   position: relative;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.95fr;
-  gap: clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 44px;
   align-items: center;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 .hero-copy {
@@ -417,7 +406,7 @@ button {
   line-height: 1.08;
   letter-spacing: -0.015em;
   color: var(--color-jet-black);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .hero-subheadline {
@@ -425,7 +414,7 @@ button {
   line-height: 1.7;
   color: #3D3D3D;
   max-width: 540px;
-  margin-bottom: 2.25rem;
+  margin-bottom: 22px;
   font-weight: 400;
 }
 
@@ -434,7 +423,8 @@ button {
   align-items: center;
   flex-wrap: wrap;
   gap: 1.25rem;
-  margin-bottom: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .btn-primary {
@@ -443,10 +433,10 @@ button {
   justify-content: center;
   gap: 10px;
   line-height: 1;
+  min-height: 48px;
   background-color: var(--color-jet-black);
   color: var(--color-crisp-white);
   padding: 0.95rem 1.85rem;
-  min-height: 48px;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -457,11 +447,12 @@ button {
 }
 
 .btn-primary svg {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
   fill: currentColor;
   display: block;
   flex-shrink: 0;
+  transform: translateY(0.5px);
 }
 
 .btn-secondary {
@@ -470,10 +461,10 @@ button {
   justify-content: center;
   gap: 10px;
   line-height: 1;
+  min-height: 48px;
   background-color: transparent;
   color: var(--color-jet-black);
   padding: 0.95rem 1.85rem;
-  min-height: 48px;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -484,11 +475,12 @@ button {
 }
 
 .btn-secondary svg {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
   fill: currentColor;
   display: block;
   flex-shrink: 0;
+  transform: translateY(0.5px);
 }
 
 /* Editorial Hero Metadata Strip (100% width, 3-column grid) */
@@ -497,10 +489,8 @@ button {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   /* gap-6 */
-  padding-top: 1.5rem;
-  /* pt-6 */
-  margin-top: 2rem;
-  /* mt-8 */
+  padding-top: 18px;
+  margin-top: 26px;
   border-top: 1px solid #E5E0D8;
   width: 100%;
 }
@@ -526,7 +516,7 @@ button {
   font-weight: 500;
 }
 
-/* Hero Visual Frame (Vertical Editorial Portrait 3:4) */
+/* Hero Visual Frame (Vertical Editorial Portrait 4:5) */
 .hero-visual-wrap {
   position: relative;
   display: flex;
@@ -538,9 +528,9 @@ button {
 .hero-frame {
   position: relative;
   width: 100%;
-  max-width: 405px;
-  aspect-ratio: 3 / 4;
-  max-height: 540px;
+  max-width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 465px;
   overflow: hidden;
   border: 1px solid var(--color-champagne);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
@@ -962,11 +952,13 @@ button {
   height: 44px;
   min-width: 44px;
   min-height: 44px;
-  border-radius: 50%;
+  border-radius: 9999px;
   background-color: var(--color-jet-black);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  line-height: 0;
   flex-shrink: 0;
   transition: background-color var(--transition-smooth);
 }
@@ -976,6 +968,7 @@ button {
   height: 20px;
   fill: var(--color-crisp-white);
   display: block;
+  margin: auto;
   flex-shrink: 0;
 }
 
@@ -1209,7 +1202,7 @@ button {
 }
 
 .footer-contact-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   font-size: 0.875rem;
@@ -1225,8 +1218,8 @@ button {
 }
 
 .footer-contact-item svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   fill: var(--color-champagne);
   display: block;
   flex-shrink: 0;
@@ -1253,26 +1246,6 @@ button {
 
 /* Tablet & Smaller Desktops */
 @media (max-width: 1024px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .hero-copy {
-    order: 1;
-  }
-
-  .hero-visual-wrap {
-    order: 2;
-  }
-
-  .hero-frame {
-    aspect-ratio: 3 / 4;
-    max-height: 480px;
-    max-width: 360px;
-    margin: 0 auto;
-  }
-
   .about-intro-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -1342,21 +1315,22 @@ button {
 
   /* Compact Refined Mobile Header WhatsApp Button (40px x 40px) */
   .btn-header-wa-mobile {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     width: 40px;
     height: 40px;
     min-width: 40px;
     min-height: 40px;
-    border: 1px solid var(--color-champagne);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 0;
+    border: 1px solid #C5B49E;
     border-radius: 4px;
+    box-sizing: border-box;
     background-color: transparent;
     color: var(--color-crisp-white);
     transition: all var(--transition-smooth);
-    padding: 0;
     margin: 0;
-    box-sizing: border-box;
   }
 
   .btn-header-wa-mobile svg {
@@ -1364,6 +1338,7 @@ button {
     height: 18px;
     fill: currentColor;
     display: block;
+    margin: auto;
     flex-shrink: 0;
   }
 
@@ -1525,11 +1500,16 @@ button {
   }
 
   .hero-copy .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    line-height: 1;
+    min-height: 48px;
     background-color: #FFFFFF;
     color: #0A0A0A;
     border: 1px solid #FFFFFF;
     font-weight: 600;
-    min-height: 48px;
     width: 100%;
     border-radius: 2px;
     font-size: 0.875rem;
@@ -1543,14 +1523,22 @@ button {
     width: 17px;
     height: 17px;
     fill: #0A0A0A;
+    display: block;
+    flex-shrink: 0;
+    transform: translateY(0.5px);
   }
 
   .hero-copy .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    line-height: 1;
+    min-height: 48px;
     background-color: rgba(10, 10, 10, 0.45);
     border: 1px solid rgba(255, 255, 255, 0.45);
     color: #FFFFFF;
     font-weight: 600;
-    min-height: 48px;
     width: 100%;
     border-radius: 2px;
     font-size: 0.875rem;
@@ -1564,6 +1552,9 @@ button {
     width: 16px;
     height: 16px;
     fill: #FFFFFF;
+    display: block;
+    flex-shrink: 0;
+    transform: translateY(0.5px);
   }
 
   .hero-copy .hero-editorial-meta {
