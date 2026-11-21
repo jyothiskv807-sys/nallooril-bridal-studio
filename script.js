@@ -80,4 +80,40 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Mobile Services Accordion (< 768px)
+  const accordionCards = document.querySelectorAll('.service-category-card');
+  accordionCards.forEach(card => {
+    const trigger = card.querySelector('.service-accordion-trigger');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', () => {
+      // Accordion only operates on mobile screens (< 768px)
+      if (window.innerWidth >= 768) return;
+
+      const isOpen = card.classList.contains('is-open');
+
+      if (isOpen) {
+        card.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+        const icon = card.querySelector('.accordion-toggle-icon');
+        if (icon) icon.textContent = '+';
+      } else {
+        // Collapse all other accordion cards
+        accordionCards.forEach(c => {
+          c.classList.remove('is-open');
+          const btn = c.querySelector('.service-accordion-trigger');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+          const ic = c.querySelector('.accordion-toggle-icon');
+          if (ic) ic.textContent = '+';
+        });
+
+        // Expand clicked card
+        card.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+        const icon = card.querySelector('.accordion-toggle-icon');
+        if (icon) icon.textContent = '−';
+      }
+    });
+  });
 });

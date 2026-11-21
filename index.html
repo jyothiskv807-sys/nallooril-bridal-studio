@@ -69,6 +69,19 @@
           <span>Book on WhatsApp</span>
         </a>
 
+        <!-- Mobile Header Compact WhatsApp Icon Button (38x38) -->
+        <a 
+          href="https://wa.me/919884513955" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="btn-header-wa-mobile"
+          aria-label="Book on WhatsApp"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.05 7.42C8.84 7.42 8.5 7.5 8.21 7.81C7.92 8.13 7.09 8.91 7.09 10.49C7.09 12.07 8.24 13.6 8.4 13.81C8.56 14.02 10.66 17.26 13.88 18.65C14.65 18.98 15.24 19.18 15.71 19.33C16.48 19.57 17.18 19.54 17.74 19.45C18.36 19.36 19.65 18.67 19.92 17.91C20.19 17.15 20.19 16.5 20.11 16.36C20.03 16.23 19.82 16.16 19.5 16C19.19 15.84 17.65 15.08 17.37 14.98C17.08 14.87 16.88 14.82 16.67 15.13C16.46 15.45 15.86 16.16 15.68 16.36C15.5 16.57 15.31 16.6 15 16.44C14.69 16.28 13.68 15.95 12.49 14.89C11.56 14.06 10.93 13.04 10.75 12.72C10.57 12.41 10.73 12.24 10.89 12.09C11.03 11.95 11.2 11.72 11.36 11.54C11.51 11.35 11.57 11.22 11.67 11.01C11.77 10.8 11.72 10.62 11.64 10.46C11.56 10.3 10.94 8.78 10.68 8.16C10.43 7.56 10.18 7.64 9.99 7.63C9.81 7.63 9.6 7.62 9.39 7.62L9.05 7.42Z"/>
+          </svg>
+        </a>
+
         <!-- Mobile Hamburger Trigger -->
         <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
           <span></span>
@@ -250,16 +263,19 @@
           </p>
         </div>
 
-        <!-- 2x2 Editorial Category Grid with Thin Borders -->
+        <!-- 2x2 Editorial Category Grid with Thin Borders (Interactive Accordions on Mobile) -->
         <div class="services-grid-2x2">
           
           <!-- Category 01 -->
-          <article class="service-category-card">
-            <div class="service-card-top">
+          <article class="service-category-card is-open" id="service-cat-1">
+            <button class="service-accordion-trigger" type="button" aria-expanded="true" aria-controls="service-body-1">
               <div class="service-header">
                 <span class="service-number">01 / Category</span>
                 <h3 class="service-category-title">Bridal & Make-up</h3>
               </div>
+              <span class="accordion-toggle-icon" aria-hidden="true">−</span>
+            </button>
+            <div class="service-accordion-body" id="service-body-1">
               <ul class="service-item-list">
                 <li class="service-item">
                   <span class="service-bullet"></span>
@@ -274,19 +290,22 @@
                   <span class="service-item-name">Custom Bridal Stitching & Draping</span>
                 </li>
               </ul>
-            </div>
-            <div class="service-note-box">
-              Complete bridal ensemble consultations, pre-wedding skin preparation, and customized saree draping.
+              <div class="service-note-box">
+                Complete bridal ensemble consultations, pre-wedding skin preparation, and customized saree draping.
+              </div>
             </div>
           </article>
 
           <!-- Category 02 -->
-          <article class="service-category-card">
-            <div class="service-card-top">
+          <article class="service-category-card" id="service-cat-2">
+            <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="service-body-2">
               <div class="service-header">
                 <span class="service-number">02 / Category</span>
                 <h3 class="service-category-title">Hair Care & Styling</h3>
               </div>
+              <span class="accordion-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="service-accordion-body" id="service-body-2">
               <ul class="service-item-list">
                 <li class="service-item">
                   <span class="service-bullet"></span>
@@ -305,19 +324,22 @@
                   <span class="service-item-name">Deep Shampoo & Conditioning</span>
                 </li>
               </ul>
-            </div>
-            <div class="service-note-box">
-              Restorative scalp nourishment, smoothing care, and high-fashion celebration coiffures.
+              <div class="service-note-box">
+                Restorative scalp nourishment, smoothing care, and high-fashion celebration coiffures.
+              </div>
             </div>
           </article>
 
           <!-- Category 03 -->
-          <article class="service-category-card">
-            <div class="service-card-top">
+          <article class="service-category-card" id="service-cat-3">
+            <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="service-body-3">
               <div class="service-header">
                 <span class="service-number">03 / Category</span>
                 <h3 class="service-category-title">Skin, Facials & Spa</h3>
               </div>
+              <span class="accordion-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="service-accordion-body" id="service-body-3">
               <ul class="service-item-list">
                 <li class="service-item">
                   <span class="service-bullet"></span>
@@ -332,19 +354,22 @@
                   <span class="service-item-name">Relaxing Spa Services & Body Massage</span>
                 </li>
               </ul>
-            </div>
-            <div class="service-note-box">
-              Dermatologically tested formulations, botanical brightness boosts, and deep tension-relief therapies.
+              <div class="service-note-box">
+                Dermatologically tested formulations, botanical brightness boosts, and deep tension-relief therapies.
+              </div>
             </div>
           </article>
 
           <!-- Category 04 -->
-          <article class="service-category-card">
-            <div class="service-card-top">
+          <article class="service-category-card" id="service-cat-4">
+            <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="service-body-4">
               <div class="service-header">
                 <span class="service-number">04 / Category</span>
                 <h3 class="service-category-title">Hands, Feet & Grooming</h3>
               </div>
+              <span class="accordion-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="service-accordion-body" id="service-body-4">
               <ul class="service-item-list">
                 <li class="service-item">
                   <span class="service-bullet"></span>
@@ -363,9 +388,9 @@
                   <span class="service-item-name">Full & Partial Body Waxing</span>
                 </li>
               </ul>
-            </div>
-            <div class="service-note-box">
-              Autoclave-sterilized manicure tools, nourishing botanical soaks, and gentle precision brow sculpting.
+              <div class="service-note-box">
+                Autoclave-sterilized manicure tools, nourishing botanical soaks, and gentle precision brow sculpting.
+              </div>
             </div>
           </article>
 
@@ -411,7 +436,7 @@
                 alt="Refined close-up beauty portrait showcasing intricate traditional South Indian bridal hairstyling with jasmine flowers and natural bridal makeup" 
                 width="1200" 
                 height="1500"
-                loading="lazy"
+                loading="eager"
               >
             </div>
             <div class="strip-content">
@@ -429,7 +454,7 @@
                 alt="Minimalist luxury salon styling station with clean arched mirrors and warm lighting" 
                 width="1200" 
                 height="896"
-                loading="lazy"
+                loading="eager"
               >
             </div>
             <div class="strip-content">
@@ -447,7 +472,7 @@
                 alt="Calm, spotless spa and facial care sanctuary with crisp linens and neutral textures" 
                 width="1200" 
                 height="896"
-                loading="lazy"
+                loading="eager"
               >
             </div>
             <div class="strip-content">
@@ -520,7 +545,7 @@
                   <div class="action-text">
                     <span class="action-label">Instant WhatsApp Booking</span>
                     <strong class="action-title">Chat on WhatsApp</strong>
-                    <span class="action-desc">+91 98845 13955 • Check bridal dates & packages</span>
+                    <span class="action-desc">+91 98845 13955 • Instant reply</span>
                   </div>
                 </div>
                 <div class="action-card-arrow" aria-hidden="true">
@@ -532,7 +557,7 @@
               <a 
                 href="tel:+919884513955" 
                 class="action-card"
-                aria-label="Direct Phone Call +91 98845 13955"
+                aria-label="Call Studio Directly +91 98845 13955"
               >
                 <div class="action-card-left">
                   <div class="action-icon-circle">
@@ -542,8 +567,8 @@
                   </div>
                   <div class="action-text">
                     <span class="action-label">Studio Direct Helpline</span>
-                    <strong class="action-title">Call +91 98845 13955</strong>
-                    <span class="action-desc">Speak directly with our senior styling team</span>
+                    <strong class="action-title">Call Studio Directly</strong>
+                    <span class="action-desc">+91 98845 13955 • Open 9:30 AM</span>
                   </div>
                 </div>
                 <div class="action-card-arrow" aria-hidden="true">
@@ -567,8 +592,8 @@
                   </div>
                   <div class="action-text">
                     <span class="action-label">Instagram Portfolio</span>
-                    <strong class="action-title">Follow @nalloorilbridalstudio</strong>
-                    <span class="action-desc">Direct messaging & latest bride showcases</span>
+                    <strong class="action-title">Instagram Portfolio</strong>
+                    <span class="action-desc">@nalloorilbridalstudio</span>
                   </div>
                 </div>
                 <div class="action-card-arrow" aria-hidden="true">
@@ -620,12 +645,15 @@
 
             <!-- Location Map & Full Width Directions Button -->
             <div class="location-map-block">
-              <!-- Grayscale Clean Embedded Map -->
+              <!-- Keyless Live Embedded Google Map -->
               <div class="map-frame-wrap">
                 <iframe 
-                  title="Map view of Payyavoor, Kannur, Kerala"
-                  src="https://maps.google.com/maps?q=Payyavoor%2C%20Kannur%2C%20Kerala&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                  loading="lazy" 
+                  title="Map view of Nallooril Salon and Bridal Studio, Payyavoor, Kannur"
+                  src="https://maps.google.com/maps?q=Nallooril%20Salon%20%26%20Bridal%20Studio%2C%20Payyavoor%2C%20Kannur&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                  width="100%" 
+                  height="260" 
+                  style="border:0; filter: grayscale(80%) contrast(105%);" 
+                  loading="eager" 
                   referrerpolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
@@ -729,22 +757,6 @@
 
     </div>
   </footer>
-
-  <!-- ==========================================================================
-       FLOATING ACTION PILL (WhatsApp Quick Connect)
-       ========================================================================== -->
-  <a 
-    href="https://wa.me/919884513955" 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    class="floating-whatsapp"
-    aria-label="Book on WhatsApp"
-  >
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.05 7.42C8.84 7.42 8.5 7.5 8.21 7.81C7.92 8.13 7.09 8.91 7.09 10.49C7.09 12.07 8.24 13.6 8.4 13.81C8.56 14.02 10.66 17.26 13.88 18.65C14.65 18.98 15.24 19.18 15.71 19.33C16.48 19.57 17.18 19.54 17.74 19.45C18.36 19.36 19.65 18.67 19.92 17.91C20.19 17.15 20.19 16.5 20.11 16.36C20.03 16.23 19.82 16.16 19.5 16C19.19 15.84 17.65 15.08 17.37 14.98C17.08 14.87 16.88 14.82 16.67 15.13C16.46 15.45 15.86 16.16 15.68 16.36C15.5 16.57 15.31 16.6 15 16.44C14.69 16.28 13.68 15.95 12.49 14.89C11.56 14.06 10.93 13.04 10.75 12.72C10.57 12.41 10.73 12.24 10.89 12.09C11.03 11.95 11.2 11.72 11.36 11.54C11.51 11.35 11.57 11.22 11.67 11.01C11.77 10.8 11.72 10.62 11.64 10.46C11.56 10.3 10.94 8.78 10.68 8.16C10.43 7.56 10.18 7.64 9.99 7.63C9.81 7.63 9.6 7.62 9.39 7.62L9.05 7.42Z"/>
-    </svg>
-    <span>Book on WhatsApp</span>
-  </a>
 
   <!-- JavaScript Interaction Script -->
   <script src="script.js"></script>
