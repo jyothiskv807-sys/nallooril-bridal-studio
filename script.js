@@ -4,6 +4,21 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Ultra-Minimal Luxury Preloader Dismissal (1.5s active + 0.45s smooth fade-out)
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    const dismissPreloader = () => {
+      preloader.classList.add('preloader-fade-out');
+      document.body.classList.remove('preloader-active');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 450);
+    };
+
+    setTimeout(dismissPreloader, 1500);
+  }
+
   const header = document.getElementById('site-header');
   const mobileToggle = document.getElementById('mobile-toggle');
   const mobileDrawer = document.getElementById('mobile-drawer');

@@ -68,6 +68,106 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ==========================================================================
+   ULTRA-MINIMAL LUXURY PRELOADER (#000000 Obsidian Black)
+   ========================================================================== */
+body.preloader-active {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: #000000;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.45s ease;
+  pointer-events: auto;
+}
+
+.preloader.preloader-fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.preloader-logo {
+  display: block;
+  width: 240px;
+  max-width: 240px;
+  height: auto;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: preloaderLogoEntrance 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0s forwards;
+  filter: none;
+  border: none;
+  outline: none;
+}
+
+@keyframes preloaderLogoEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Minimal Loading Line: centered 24px below logo, 120px wide, 1px hairline */
+.preloader-progress-track {
+  width: 120px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin-top: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.preloader-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #FFFFFF;
+  animation: preloaderProgressFill 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+}
+
+@keyframes preloaderProgressFill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .preloader-logo {
+    width: 180px;
+    max-width: 180px;
+  }
+}
+
 img,
 picture,
 svg {

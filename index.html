@@ -22,7 +22,33 @@
 
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="preloader-active">
+
+  <!-- ==========================================================================
+       ULTRA-MINIMAL LUXURY PRELOADER (#000000 Obsidian Black)
+       ========================================================================== -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <img 
+        src="assets/logo-trimmed.png" 
+        alt="Nallooril Salon and Bridal Studio" 
+        class="preloader-logo" 
+        width="240" 
+        height="90"
+        loading="eager"
+      >
+      <div class="preloader-progress-track">
+        <div class="preloader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <noscript>
+    <style>
+      .preloader { display: none !important; }
+      body.preloader-active { overflow: auto !important; }
+    </style>
+  </noscript>
 
   <!-- Accessible Skip Link -->
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
