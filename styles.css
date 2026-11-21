@@ -29,7 +29,9 @@
 
   /* Elevation & Borders */
   --hairline: 1px solid var(--color-border-hairline);
-  --transition-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-image: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-press: 0.15s ease;
 }
 
 /* --- Reset & Global Baseline --- */
@@ -187,10 +189,6 @@ button {
   transition: opacity var(--transition-smooth);
 }
 
-.brand-anchor:hover .brand-logo-img {
-  opacity: 0.9;
-}
-
 /* Desktop Navigation Menu */
 .desktop-nav {
   display: flex;
@@ -203,9 +201,10 @@ button {
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.06em;
-  color: #E0E0E0;
+  color: #E5E5E5;
   position: relative;
   padding-bottom: 4px;
+  transition: color var(--transition-smooth);
 }
 
 .nav-link::after {
@@ -213,18 +212,12 @@ button {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0%;
+  width: 100%;
   height: 1px;
   background-color: var(--color-champagne);
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover {
-  color: var(--color-crisp-white);
-}
-
-.nav-link:hover::after {
-  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-smooth);
 }
 
 /* Header Action CTA */
@@ -253,18 +246,13 @@ button {
   border: 1px solid var(--color-champagne);
   border-radius: 2px;
   background-color: transparent;
-  transition: all var(--transition-smooth);
+  transition: background-color var(--transition-smooth), color var(--transition-smooth), border-color var(--transition-smooth), transform var(--transition-press);
 }
 
 .btn-nav-whatsapp svg {
   width: 15px;
   height: 15px;
   fill: currentColor;
-}
-
-.btn-nav-whatsapp:hover {
-  background-color: var(--color-champagne);
-  color: var(--color-jet-black);
 }
 
 /* Mobile Menu Toggle Button (44px x 44px Tap Target) */
@@ -421,19 +409,13 @@ button {
   text-transform: uppercase;
   border: 1px solid var(--color-jet-black);
   border-radius: 2px;
-  transition: all var(--transition-smooth);
+  transition: background-color var(--transition-smooth), border-color var(--transition-smooth), color var(--transition-smooth), transform var(--transition-press), box-shadow var(--transition-smooth);
 }
 
 .btn-primary svg {
   width: 17px;
   height: 17px;
   fill: currentColor;
-}
-
-.btn-primary:hover {
-  background-color: #222222;
-  border-color: #222222;
-  transform: translateY(-1px);
 }
 
 .btn-secondary {
@@ -451,19 +433,13 @@ button {
   text-transform: uppercase;
   border: 1px solid #D6D0C7;
   border-radius: 2px;
-  transition: all var(--transition-smooth);
+  transition: background-color var(--transition-smooth), border-color var(--transition-smooth), color var(--transition-smooth), transform var(--transition-press);
 }
 
 .btn-secondary svg {
   width: 16px;
   height: 16px;
   fill: currentColor;
-}
-
-.btn-secondary:hover {
-  border-color: var(--color-jet-black);
-  background-color: var(--color-alabaster);
-  transform: translateY(-1px);
 }
 
 /* Editorial Hero Metadata Strip (100% width, 3-column grid) */
@@ -525,11 +501,7 @@ button {
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  transition: transform 0.8s ease;
-}
-
-.hero-frame:hover img {
-  transform: scale(1.02);
+  transition: transform var(--transition-image);
 }
 
 /* ==========================================================================
@@ -626,11 +598,21 @@ button {
   justify-content: space-between;
   height: 100%;
   box-sizing: border-box;
+  position: relative;
   transition: background-color var(--transition-smooth);
 }
 
-.service-category-card:hover {
-  background-color: #FCFBF9;
+.service-category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-champagne);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-smooth);
 }
 
 .service-accordion-trigger {
@@ -742,10 +724,11 @@ button {
 .strip-item {
   position: relative;
   background-color: var(--color-crisp-white);
-  border: 1px solid var(--color-champagne);
+  border: 1px solid #E5E0D8;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: border-color var(--transition-smooth);
 }
 
 .strip-image-wrap {
@@ -759,11 +742,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.strip-item:hover .strip-image-wrap img {
-  transform: scale(1.04);
+  transition: transform var(--transition-image);
 }
 
 .strip-content {
@@ -853,11 +832,6 @@ button {
   transition: all var(--transition-smooth);
 }
 
-.btn-editorial-link:hover {
-  color: var(--color-champagne-dark);
-  border-color: var(--color-champagne-dark);
-}
-
 /* ==========================================================================
    DIRECT BOOKING & STUDIO LOCATION (Strictly No Forms)
    ========================================================================== */
@@ -900,15 +874,8 @@ button {
   border: 1px solid var(--color-champagne);
   background-color: var(--color-alabaster);
   border-radius: 2px;
-  transition: all var(--transition-smooth);
+  transition: background-color var(--transition-smooth), border-color var(--transition-smooth), transform var(--transition-press), box-shadow var(--transition-smooth);
   text-decoration: none;
-}
-
-.action-card:hover {
-  background-color: var(--color-crisp-white);
-  border-color: var(--color-jet-black);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }
 
 .action-card-left {
@@ -933,10 +900,6 @@ button {
   width: 20px;
   height: 20px;
   fill: var(--color-crisp-white);
-}
-
-.action-card:hover .action-icon-circle {
-  background-color: var(--color-champagne-dark);
 }
 
 .action-text {
@@ -975,17 +938,13 @@ button {
   width: 32px;
   height: 32px;
   color: var(--color-jet-black);
-  transition: transform var(--transition-smooth);
+  transition: transform var(--transition-smooth), color var(--transition-smooth);
 }
 
 .action-card-arrow svg {
   width: 18px;
   height: 18px;
   fill: currentColor;
-}
-
-.action-card:hover .action-card-arrow {
-  transform: translateX(4px);
 }
 
 /* Right Column: Studio Location & Hours */
@@ -1063,10 +1022,6 @@ button {
   transition: filter var(--transition-smooth);
 }
 
-.map-frame-wrap:hover iframe {
-  filter: grayscale(0%);
-}
-
 .btn-directions-full {
   width: 100%;
   display: flex;
@@ -1084,18 +1039,13 @@ button {
   white-space: nowrap;
   border-radius: 2px;
   border: 1px solid var(--color-jet-black);
-  transition: all var(--transition-smooth);
+  transition: background-color var(--transition-smooth), border-color var(--transition-smooth), transform var(--transition-press);
 }
 
 .btn-directions-full svg {
   width: 16px;
   height: 16px;
   fill: currentColor;
-}
-
-.btn-directions-full:hover {
-  background-color: #262626;
-  border-color: #262626;
 }
 
 /* ==========================================================================
@@ -1138,10 +1088,6 @@ button {
   transition: opacity var(--transition-smooth);
 }
 
-.footer-logo-row a:hover .footer-logo-img {
-  opacity: 0.9;
-}
-
 .footer-bio {
   font-size: 0.875rem;
   color: #999999;
@@ -1171,10 +1117,6 @@ button {
   transition: color var(--transition-smooth);
 }
 
-.footer-link:hover {
-  color: var(--color-crisp-white);
-}
-
 .footer-direct-contacts {
   list-style: none;
   display: flex;
@@ -1195,10 +1137,6 @@ button {
   height: 16px;
   fill: var(--color-champagne);
   flex-shrink: 0;
-}
-
-.footer-contact-item a:hover {
-  color: var(--color-crisp-white);
 }
 
 .footer-bottom {
@@ -1330,7 +1268,6 @@ button {
     fill: currentColor;
   }
 
-  .btn-header-wa-mobile:hover,
   .btn-header-wa-mobile:active {
     background-color: var(--color-champagne);
     color: var(--color-jet-black);
@@ -1463,7 +1400,7 @@ button {
     line-height: 1;
     color: var(--color-jet-black);
     background-color: transparent;
-    transition: all var(--transition-smooth);
+    transition: transform var(--transition-smooth), background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
     margin-left: 0.75rem;
     flex-shrink: 0;
   }
@@ -1472,32 +1409,28 @@ button {
     background-color: var(--color-jet-black);
     color: var(--color-crisp-white);
     border-color: var(--color-jet-black);
+    transform: rotate(45deg);
   }
 
   .service-accordion-body {
-    display: none !important;
-    padding: 0 1.25rem 1.5rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 1.25rem;
+    transition: max-height 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, padding 0.35s ease;
+    display: flex !important;
+    flex-direction: column;
   }
 
   .service-category-card.is-open .service-accordion-body {
-    display: block !important;
-    animation: accordionFade 0.25s ease;
+    max-height: 520px;
+    opacity: 1;
+    padding: 0 1.25rem 1.5rem;
   }
 
   .service-note-box {
     margin-top: 1.25rem;
     padding-top: 1rem;
-  }
-
-  @keyframes accordionFade {
-    from {
-      opacity: 0;
-      transform: translateY(-4px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 
   /* Horizontal Swipeable Sanctuary Carousel on Mobile (< 768px) */
@@ -1624,5 +1557,121 @@ button {
 
   .footer-location-tag {
     text-align: left;
+  }
+}
+
+/* ==========================================================================
+   DESKTOP HOVER MICRO-INTERACTIONS (Isolated from touchscreens)
+   ========================================================================== */
+@media (hover: hover) and (pointer: fine) {
+  .brand-anchor:hover .brand-logo-img {
+    opacity: 0.9;
+  }
+
+  .nav-link:hover {
+    color: var(--color-crisp-white);
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  .btn-nav-whatsapp:hover {
+    background-color: var(--color-champagne);
+    color: var(--color-jet-black);
+    border-color: var(--color-champagne);
+  }
+
+  .btn-primary:hover {
+    background-color: #222222;
+    border-color: var(--color-champagne);
+    color: var(--color-crisp-white);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-champagne);
+    background-color: var(--color-alabaster);
+    color: var(--color-jet-black);
+    transform: translateY(-1px);
+  }
+
+  .hero-frame:hover img {
+    transform: scale(1.02);
+  }
+
+  .service-category-card:hover {
+    background-color: #FCFBF9;
+  }
+
+  .service-category-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .strip-item:hover {
+    border-color: var(--color-champagne);
+  }
+
+  .strip-item:hover .strip-image-wrap img {
+    transform: scale(1.03);
+  }
+
+  .btn-editorial-link:hover {
+    color: var(--color-champagne-dark);
+    border-color: var(--color-champagne-dark);
+  }
+
+  .action-card:hover {
+    background-color: var(--color-crisp-white);
+    border-color: var(--color-champagne);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  }
+
+  .action-card:hover .action-icon-circle {
+    background-color: var(--color-champagne-dark);
+  }
+
+  .action-card:hover .action-card-arrow {
+    transform: translateX(4px);
+    color: var(--color-champagne-dark);
+  }
+
+  .map-frame-wrap:hover iframe {
+    filter: grayscale(0%);
+  }
+
+  .btn-directions-full:hover {
+    background-color: #222222;
+    border-color: var(--color-champagne);
+  }
+
+  .footer-logo-row a:hover .footer-logo-img {
+    opacity: 0.9;
+  }
+
+  .footer-link:hover {
+    color: var(--color-crisp-white);
+  }
+
+  .footer-contact-item a:hover {
+    color: var(--color-crisp-white);
+  }
+}
+
+/* ==========================================================================
+   TOUCHSCREEN TAP FEEDBACK (iOS Safari & Android Chrome)
+   ========================================================================== */
+@media (pointer: coarse), (hover: none) {
+  .btn-primary:active,
+  .btn-secondary:active,
+  .btn-directions-full:active,
+  .btn-nav-whatsapp:active,
+  .btn-header-wa-mobile:active,
+  .action-card:active,
+  .service-accordion-trigger:active,
+  .btn-editorial-link:active {
+    transform: scale(0.985);
+    transition: transform var(--transition-press);
   }
 }

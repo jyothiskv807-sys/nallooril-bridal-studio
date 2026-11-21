@@ -96,23 +96,17 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isOpen) {
         card.classList.remove('is-open');
         trigger.setAttribute('aria-expanded', 'false');
-        const icon = card.querySelector('.accordion-toggle-icon');
-        if (icon) icon.textContent = '+';
       } else {
         // Collapse all other accordion cards
         accordionCards.forEach(c => {
           c.classList.remove('is-open');
           const btn = c.querySelector('.service-accordion-trigger');
           if (btn) btn.setAttribute('aria-expanded', 'false');
-          const ic = c.querySelector('.accordion-toggle-icon');
-          if (ic) ic.textContent = '+';
         });
 
         // Expand clicked card
         card.classList.add('is-open');
         trigger.setAttribute('aria-expanded', 'true');
-        const icon = card.querySelector('.accordion-toggle-icon');
-        if (icon) icon.textContent = '−';
       }
     });
   });
