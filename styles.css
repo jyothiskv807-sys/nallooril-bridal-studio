@@ -77,7 +77,8 @@ img, picture, svg {
 .action-icon-circle svg,
 .footer-contact-item svg,
 .info-item svg,
-.action-card-arrow svg {
+.action-card-arrow svg,
+.accordion-toggle-icon svg {
   display: block;
   flex-shrink: 0;
 }
@@ -1593,14 +1594,21 @@ button {
     min-height: 28px;
     border: 1px solid var(--color-champagne);
     border-radius: 50%;
-    font-size: 1.125rem;
-    font-weight: 500;
-    line-height: 1;
     color: var(--color-jet-black);
     background-color: transparent;
     transition: transform var(--transition-smooth), background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
     margin-left: 0.75rem;
     flex-shrink: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .accordion-toggle-icon svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    pointer-events: none;
   }
 
   .service-category-card.is-open .accordion-toggle-icon {
