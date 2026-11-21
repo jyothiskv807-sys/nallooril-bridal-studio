@@ -686,7 +686,7 @@ button {
 }
 
 .accordion-toggle-icon {
-  display: none;
+  display: none !important;
 }
 
 .service-accordion-body {
@@ -1667,7 +1667,7 @@ button {
   }
 
   .accordion-toggle-icon {
-    display: inline-flex;
+    display: inline-flex !important;
     align-items: center;
     justify-content: center;
     width: 32px;
