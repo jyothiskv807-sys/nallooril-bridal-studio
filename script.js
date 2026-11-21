@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Smooth scroll with header height compensation
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
       if (targetId === '#' || !targetId) return;
 
