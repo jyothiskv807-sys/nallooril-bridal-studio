@@ -1994,3 +1994,264 @@ button {
     border-color: rgba(255, 255, 255, 0.7);
   }
 }
+
+/* ==========================================================================
+   DESKTOP DARK LUXURY HERO (min-width: 992px)
+   ========================================================================== */
+@media (min-width: 992px) {
+  /* 1. Header logo size enhancement */
+  .brand-logo-img {
+    height: 56px;
+    max-width: 200px;
+    width: auto;
+  }
+
+  /* 2. Hero container dark luxury canvas */
+  .hero-section {
+    background-color: #0A0A0A;
+    min-height: 580px;
+    height: calc(100vh - 84px);
+    max-height: 960px;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(197, 180, 158, 0.15);
+  }
+
+  @media (max-height: 640px) {
+    .hero-section {
+      height: auto;
+      min-height: 560px;
+      padding: 2.5rem 0;
+    }
+  }
+
+  .hero-section .hero-grid {
+    position: static;
+    width: 100%;
+    max-width: 1240px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  /* 3. Left content column & typography */
+  .hero-section .hero-copy {
+    position: relative;
+    z-index: 10;
+    width: 48%;
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    order: 1;
+    padding: 0;
+  }
+
+  .hero-section .hero-eyebrow {
+    color: #D4AF37;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 1.1rem;
+    display: inline-block;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.7);
+  }
+
+  .hero-section .hero-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2.8rem, 3.8vw, 4rem);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
+    margin-bottom: 1.25rem;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+  }
+
+  .hero-section .hero-subheadline {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #CCCCCC;
+    max-width: 510px;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+
+  /* 4. Side-by-side high-contrast CTA buttons */
+  .hero-section .hero-actions {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: auto;
+  }
+
+  .hero-section .hero-actions .btn-primary {
+    background-color: #FFFFFF;
+    color: #0A0A0A;
+    border: 1px solid #FFFFFF;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+    padding: 0.95rem 1.85rem;
+    min-height: 48px;
+    border-radius: 2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    line-height: 1;
+    white-space: nowrap;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+    transition: background-color var(--transition-smooth), border-color var(--transition-smooth), color var(--transition-smooth), transform var(--transition-press), box-shadow var(--transition-smooth);
+  }
+
+  .hero-section .hero-actions .btn-primary svg {
+    width: 17px;
+    height: 17px;
+    fill: #0A0A0A;
+    display: block;
+    flex-shrink: 0;
+    transform: translateY(0.5px);
+  }
+
+  .hero-section .hero-actions .btn-secondary {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+    padding: 0.95rem 1.85rem;
+    min-height: 48px;
+    border-radius: 2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    line-height: 1;
+    white-space: nowrap;
+    transition: background-color var(--transition-smooth), border-color var(--transition-smooth), color var(--transition-smooth), transform var(--transition-press);
+  }
+
+  .hero-section .hero-actions .btn-secondary svg {
+    width: 17px;
+    height: 17px;
+    fill: #FFFFFF;
+    display: block;
+    flex-shrink: 0;
+    transform: translateY(0.5px);
+  }
+
+  /* 5. Editorial metadata info bar */
+  .hero-section .hero-editorial-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding-top: 1.25rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(197, 180, 158, 0.25);
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .hero-section .hero-editorial-meta .meta-number {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1.2;
+  }
+
+  .hero-section .hero-editorial-meta .meta-label {
+    font-size: 0.8125rem;
+    color: #C5B49E;
+    letter-spacing: 0.04em;
+    margin-top: 0.25rem;
+    font-weight: 500;
+  }
+
+  /* 6. Seamless blended bridal visual (remove boxy frame) */
+  .hero-section .hero-visual-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    order: unset;
+  }
+
+  .hero-section .hero-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    aspect-ratio: auto;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    background: transparent;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .hero-section .hero-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+    display: block;
+  }
+
+  .hero-section .hero-gradient-overlay {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+      linear-gradient(to right, #0A0A0A 0%, rgba(10, 10, 10, 0.95) 15%, rgba(10, 10, 10, 0.5) 35%, rgba(10, 10, 10, 0) 65%),
+      linear-gradient(to top, #0A0A0A 0%, rgba(10, 10, 10, 0.85) 12%, rgba(10, 10, 10, 0) 28%),
+      linear-gradient(to bottom, #0A0A0A 0%, rgba(10, 10, 10, 0.5) 8%, rgba(10, 10, 10, 0) 18%);
+  }
+
+  /* Enforce desktop accordion plus icon removal */
+  .accordion-toggle-icon {
+    display: none !important;
+  }
+}
+
+/* Desktop Hover Micro-interactions */
+@media (min-width: 992px) and (hover: hover) and (pointer: fine) {
+  .hero-section .hero-actions .btn-primary:hover {
+    background-color: #E8E5DF;
+    border-color: #E8E5DF;
+    color: #0A0A0A;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.18);
+  }
+
+  .hero-section .hero-actions .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.85);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+  }
+}
